@@ -1,5 +1,5 @@
-withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'MyID', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
+stage "unit test"
 
-    sh("git tag -a some_tag -m 'Jenkins'")
-    sh("git push https://${env.GIT_USERNAME}:${env.GIT_PASSWORD}@<REPO> --tags")
+node {
+   sh "echo unit test app"
 }
